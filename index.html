@@ -1,160 +1,93 @@
-⁠ html
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Opción de Vida - Spa de la Salud&lt;/title&gt;
-    &lt;style&gt;
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #00796b, #004d40);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        .logo {
-            max-width: 180px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-bottom: 1rem;
-        }
-        nav {
-            background: #004d40;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #80cbc4;
-        }
-        .container {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h2 {
-            color: #00796b;
-            border-bottom: 2px solid #00796b;
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 1rem;
-        }
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #333;
-            color: white;
-            margin-top: 3rem;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;header&gt;
-    &lt;img src="https://i.imgur.com/6NwXFfu.jpeg" alt="Logo Opción de Vida" class="logo"&gt;
-    &lt;h1&gt;Opción de Vida&lt;/h1&gt;
-    &lt;p&gt;Spa de la Salud - Una nueva forma de dar Salud&lt;/p&gt;
-&lt;/header&gt;
-
-&lt;nav&gt;
-    &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
-    &lt;a href="#tienda"&gt;Tienda&lt;/a&gt;
-    &lt;a href="#terapias"&gt;Terapias&lt;/a&gt;
-    &lt;a href="#jornadas"&gt;Jornadas&lt;/a&gt;
-    &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
-&lt;/nav&gt;
-
-&lt;div class="container" id="inicio"&gt;
-    &lt;h2&gt;Bienvenidos&lt;/h2&gt;
-    &lt;p&gt;Centro especializado en bienestar integral, recuperación física y estética de la salud.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class="container" id="tienda"&gt;
-    &lt;h2&gt;Tienda de Productos&lt;/h2&gt;
-    &lt;div class="grid"&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Suplemento Natural A&lt;/h3&gt;
-            &lt;p&gt;&lt;strong&gt;Uso:&lt;/strong&gt; Fortalece el sistema inmunológico y aporta energía vital.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Crema Regeneradora&lt;/h3&gt;
-            &lt;p&gt;&lt;strong&gt;Uso:&lt;/strong&gt; Tratamiento tópico para la recuperación y salud de la piel.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Tónico Herbal&lt;/h3&gt;
-            &lt;p&gt;&lt;strong&gt;Uso:&lt;/strong&gt; Desintoxicación y apoyo gastrointestinal.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="container" id="terapias"&gt;
-    &lt;h2&gt;Terapias y Servicios&lt;/h2&gt;
-    &lt;p&gt;Contamos con especialistas para el tratamiento de diversas patologías:&lt;/p&gt;
-    &lt;div class="grid"&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Terapias del Sistema Nervioso&lt;/h3&gt;
-            &lt;p&gt;Terapia neural, cerebral y craneal para el equilibrio neurológico.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Salud Digestiva&lt;/h3&gt;
-            &lt;p&gt;Colonterapia no invasiva y tratamientos gastrointestinales.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Quiropraxia y Ortopedia&lt;/h3&gt;
-            &lt;p&gt;Acomodamiento lumbosacro y corrección vertebral con expertos.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Rehabilitación Física&lt;/h3&gt;
-            &lt;p&gt;Termoterapia e hidroterapia para recuperación de ACV y accidentes.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Tratamientos Circulatorios&lt;/h3&gt;
-            &lt;p&gt;Terapias para venas várices y escleroterapia.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card"&gt;
-            &lt;h3&gt;Bienestar General&lt;/h3&gt;
-            &lt;p&gt;Terapias de rodillas, manejo de hiperplasia ósea y estética capilar.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="container" id="jornadas"&gt;
-    &lt;h2&gt;Jornadas de Salud&lt;/h2&gt;
-    &lt;p&gt;Llevamos nuestros servicios de bienestar y diagnóstico a diferentes municipios.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;footer&gt;
-    &lt;p&gt;&amp;copy; 2026 Opción de Vida - Spa de la Salud. Todos los derechos reservados.&lt;/p&gt;
-&lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
- ⁠
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opción de Vida - Spa de la Salud</title>
+<style>
+•⁠  ⁠{ box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f7f9fc; color: #333; line-height: 1.6; }
+.top-bar { background: #004d40; color: white; padding: 10px 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; }
+.whatsapp-btn { background: #25d366; color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; font-weight: bold; display: flex; align-items: center; font-size: 0.9rem; }
+.whatsapp-btn:hover { background: #20ba5a; }
+.whatsapp-btn::before { content: '💬'; margin-right: 8px; }
+nav { background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; }
+.logo { font-size: 1.8rem; font-weight: bold; color: #00796b; display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 40px; margin-right: 15px; }
+.nav-links a { text-decoration: none; color: #555; font-weight: 600; margin-left: 30px; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: #00796b; }
+.hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519631108627-f0dd0d2a45d0?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.5rem; margin-bottom: 30px; }
+.btn { display: inline-block; background: #00796b; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+.container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; color: #004d40; position: relative; }
+.section-title::after { content: ''; width: 50px; height: 3px; background: #00796b; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.service-card:hover { transform: translateY(-10px); }
+.service-card img { width: 100%; height: 200px; object-fit: cover; }
+.service-content { padding: 25px; }
+.service-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: #004d40; }
+footer { background: #004d40; color: white; text-align: center; padding: 30px 0; margin-top: 80px; }
+.footer-links { margin-bottom: 15px; }
+.footer-links a { color: white; text-decoration: none; margin: 0 15px; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+<span></span>
+<a href="https://wa.me/573209010721" class="whatsapp-btn" target="_blank">Escríbenos por WhatsApp</a>
+</div>
+<nav>
+<a href="#" class="logo">
+<img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=100&q=80" alt="Logo">
+Opción de Vida
+</a>
+<div class="nav-links">
+<a href="#" class="active">Inicio</a>
+<a href="#services">Servicios</a>
+<a href="#about">Nosotros</a>
+<a href="#contact">Contacto</a>
+</div>
+</nav>
+<header class="hero">
+<h1>Tu Bienestar es Nuestra Prioridad</h1>
+<p>Spa de la Salud y Medicina Integral</p>
+<a href="#services" class="btn">Explora Nuestros Servicios</a>
+</header>
+<div class="container" id="services">
+<h2 class="section-title">Especialidades Médicas y Terapia</h2>
+<div class="services-grid">
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80" alt="Rehabilitación Física">
+<div class="service-content">
+<h3>Rehabilitación Física</h3>
+<p>Terapias avanzadas de recuperación funcional, manejo de dolor y rehabilitación neurológica y traumatológica.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80" alt="Medicina General">
+<div class="service-content">
+<h3>Medicina General</h3>
+<p>Consulta médica integral, prevención de enfermedades, control de crónicos y atención familiar prioritaria.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80" alt="Terapias de Bienestar">
+<div class="service-content">
+<h3>Terapias Alternativas y Estética</h3>
+<p>Tratamientos para el equilibrio mente-cuerpo, masoterapia, estética facial y corporal con los más altos estándares.</p>
+</div>
+</div>
+</div>
+</div>
+<footer id="contact">
+<div class="footer-links">
+<a href="#">Inicio</a> | <a href="#services">Servicios</a> | <a href="#about">Nosotros</a> | <a href="#contact">Contacto</a>
+</div>
+<p>©️ 2026 Opción de Vida - Spa de la Salud. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
