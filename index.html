@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Opción de Vida - Spa de la Salud</title>
 <style>
-•⁠  ⁠{ box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f7f9fc; color: #333; line-height: 1.6; }
 .top-bar { background: #004d40; color: white; padding: 10px 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; }
 .whatsapp-btn { background: #25d366; color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; font-weight: bold; display: flex; align-items: center; font-size: 0.9rem; }
@@ -14,7 +14,7 @@ body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-c
 .whatsapp-btn::before { content: '💬'; margin-right: 8px; }
 nav { background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; }
 .logo { font-size: 1.8rem; font-weight: bold; color: #00796b; display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 40px; margin-right: 15px; }
+.logo img { height: 48px; width: auto; object-fit: contain; border-radius: 6px; margin-right: 15px; }
 .nav-links a { text-decoration: none; color: #555; font-weight: 600; margin-left: 30px; transition: color 0.3s; }
 .nav-links a:hover, .nav-links a.active { color: #00796b; }
 .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519631108627-f0dd0d2a45d0?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
@@ -33,16 +33,30 @@ nav { background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: stic
 footer { background: #004d40; color: white; text-align: center; padding: 30px 0; margin-top: 80px; }
 .footer-links { margin-bottom: 15px; }
 .footer-links a { color: white; text-decoration: none; margin: 0 15px; }
+.about-section { background: #ffffff; padding: 70px 20px; margin-top: 60px; box-shadow: 0 -2px 10px rgba(0,0,0,0.04); }
+.about-intro { max-width: 850px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; color: #444; }
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+.about-card { background: #f7f9fc; border-left: 4px solid #00796b; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.about-card h3 { color: #004d40; font-size: 1.3rem; margin-bottom: 12px; }
+.about-card ul { padding-left: 20px; color: #444; }
+.about-card li { margin-bottom: 8px; }
+.about-cta { text-align: center; margin-top: 40px; }
+@media (max-width: 768px) {
+  nav { flex-direction: column; padding: 15px 20px; gap: 12px; }
+  .nav-links a { margin: 0 10px; }
+  .hero h1 { font-size: 2.1rem; }
+  .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+}
 </style>
 </head>
 <body>
 <div class="top-bar">
-<span></span>
+<span>Spa de la Salud y Medicina Integral · Atención Personalizada</span>
 <a href="https://wa.me/573209010721" class="whatsapp-btn" target="_blank">Escríbenos por WhatsApp</a>
 </div>
 <nav>
 <a href="#" class="logo">
-<img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=100&q=80" alt="Logo">
+<img src="https://i.postimg.cc/GpQPZ6B2/Captura-de-pantalla-2026-11-26-a-la(s)-12-32-42-a-m.png" alt="Logo Opción de Vida">
 Opción de Vida
 </a>
 <div class="nav-links">
@@ -83,10 +97,46 @@ Opción de Vida
 </div>
 </div>
 </div>
+<section class="about-section" id="about">
+<h2 class="section-title">Sobre Nosotros</h2>
+<p class="about-intro">
+En <strong>Opción de Vida - Spa de la Salud</strong> integramos fisioterapia especializada, medicina general y terapias de bienestar en un solo lugar. Nuestro enfoque combina atención humana, diagnóstico personalizado y tratamientos basados en tu recuperación real.
+</p>
+<div class="about-grid">
+<div class="about-card">
+<h3>Área de Fisioterapia y Rehabilitación</h3>
+<ul>
+<li>Valoración fisioterapéutica integral para identificar la causa del dolor o la limitación física.</li>
+<li>Planes personalizados de recuperación funcional, movilidad articular y fortalecimiento muscular.</li>
+<li>Manejo de lesiones deportivas, rehabilitación traumatológica y acompañamiento neurológico.</li>
+</ul>
+</div>
+<div class="about-card">
+<h3>Medicina Integral y Seguimiento</h3>
+<ul>
+<li>Consulta de medicina general orientada a la prevención y al diagnóstico oportuno.</li>
+<li>Control continuo de enfermedades crónicas con atención cercana y prioritaria para toda la familia.</li>
+<li>Trabajo coordinado entre médico y fisioterapeuta para acelerar tu bienestar.</li>
+</ul>
+</div>
+<div class="about-card">
+<h3>Bienestar, Masoterapia y Estética</h3>
+<ul>
+<li>Terapias alternativas enfocadas en el equilibrio mente-cuerpo y la reducción del estrés.</li>
+<li>Masoterapia terapéutica y relajante adaptada a tus necesidades musculares.</li>
+<li>Cuidado estético facial y corporal con estándares seguros de salud y spa.</li>
+</ul>
+</div>
+</div>
+<div class="about-cta">
+<a href="https://wa.me/573209010721" class="btn" target="_blank">Agenda tu Valoración por WhatsApp</a>
+</div>
+</section>
 <footer id="contact">
 <div class="footer-links">
 <a href="#">Inicio</a> | <a href="#services">Servicios</a> | <a href="#about">Nosotros</a> | <a href="#contact">Contacto</a>
 </div>
+<p style="margin-bottom: 8px;">Agenda tu cita por <a href="https://wa.me/573209010721" target="_blank" style="color: #80cbc4; text-decoration: none; font-weight: bold;">WhatsApp (+57 320 901 0721)</a></p>
 <p>©️ 2026 Opción de Vida - Spa de la Salud. Todos los derechos reservados.</p>
 </footer>
 </body>
