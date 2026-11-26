@@ -1,143 +1,1322 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opción de Vida - Spa de la Salud</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f7f9fc; color: #333; line-height: 1.6; }
-.top-bar { background: #004d40; color: white; padding: 10px 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; }
-.whatsapp-btn { background: #25d366; color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; font-weight: bold; display: flex; align-items: center; font-size: 0.9rem; }
-.whatsapp-btn:hover { background: #20ba5a; }
-.whatsapp-btn::before { content: '💬'; margin-right: 8px; }
-nav { background: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; }
-.logo { font-size: 1.8rem; font-weight: bold; color: #00796b; display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 48px; width: auto; object-fit: contain; border-radius: 6px; margin-right: 15px; }
-.nav-links a { text-decoration: none; color: #555; font-weight: 600; margin-left: 30px; transition: color 0.3s; }
-.nav-links a:hover, .nav-links a.active { color: #00796b; }
-.hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519631108627-f0dd0d2a45d0?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
-.hero h1 { font-size: 3rem; margin-bottom: 20px; }
-.hero p { font-size: 1.5rem; margin-bottom: 30px; }
-.btn { display: inline-block; background: #00796b; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-.container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; color: #004d40; position: relative; }
-.section-title::after { content: ''; width: 50px; height: 3px; background: #00796b; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.service-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.service-card:hover { transform: translateY(-10px); }
-.service-card img { width: 100%; height: 200px; object-fit: cover; }
-.service-content { padding: 25px; }
-.service-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: #004d40; }
-footer { background: #004d40; color: white; text-align: center; padding: 30px 0; margin-top: 80px; }
-.footer-links { margin-bottom: 15px; }
-.footer-links a { color: white; text-decoration: none; margin: 0 15px; }
-.about-section { background: #ffffff; padding: 70px 20px; margin-top: 60px; box-shadow: 0 -2px 10px rgba(0,0,0,0.04); }
-.about-intro { max-width: 850px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; color: #444; }
-.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-.about-card { background: #f7f9fc; border-left: 4px solid #00796b; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-.about-card h3 { color: #004d40; font-size: 1.3rem; margin-bottom: 12px; }
-.about-card ul { padding-left: 20px; color: #444; }
-.about-card li { margin-bottom: 8px; }
-.about-cta { text-align: center; margin-top: 40px; }
-@media (max-width: 768px) {
-  nav { flex-direction: column; padding: 15px 20px; gap: 12px; }
-  .nav-links a { margin: 0 10px; }
-  .hero h1 { font-size: 2.1rem; }
-  .top-bar { flex-direction: column; gap: 8px; text-align: center; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opción de Vida | Spa de la Salud &amp; Medicina Integral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #09090b;
+      --bg-secondary: #111115;
+      --bg-card: #15151a;
+      --bg-elevated: #1c1c23;
+      --gold: #d4af37;
+      --gold-light: #e7c86e;
+      --gold-muted: rgba(212, 175, 55, 0.22);
+      --gold-soft: rgba(212, 175, 55, 0.08);
+      --text-primary: #f6f4ef;
+      --text-secondary: #b9b5ac;
+      --text-muted: #848078;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --whatsapp: #25d366;
+      --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg-primary); color: var(--text-primary); font-family: var(--sans); }
+    body { background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    /* Top Header matching reference editorial luxury bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 11, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gold-muted);
+      padding: 14px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .menu-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .menu-trigger:hover { border-color: var(--gold-muted); background: var(--gold-soft); }
+    .hamburger-lines { display: flex; flex-direction: column; gap: 4px; width: 18px; }
+    .hamburger-lines span { display: block; height: 1.5px; background: var(--gold-light); border-radius: 2px; }
+
+    .brand-center {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      justify-self: center;
+    }
+    .brand-logo-img {
+      height: 44px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--gold-muted);
+      background: #141418;
+      padding: 2px;
+    }
+    .brand-wordmark { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+    .brand-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+    .brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .icon-circle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .icon-circle-btn:hover { border-color: var(--gold); transform: translateY(-1px); }
+    .icon-circle-btn.gold-circle {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #0b0b0d;
+      border-color: transparent;
+      font-weight: 700;
+    }
+    .badge-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #09090b;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Quick Search Bar (toggleable from header icon) */
+    .search-bar-panel {
+      display: none;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--gold-muted);
+      padding: 14px 32px;
+    }
+    .search-bar-panel.open { display: block; }
+    .search-bar-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-muted);
+      border-radius: 999px;
+      padding: 8px 18px;
+    }
+    .search-bar-inner input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    .search-bar-inner input::placeholder { color: var(--text-muted); }
+
+    /* Hero matching screenshot */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 96px 24px 88px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.12), transparent 55%),
+        linear-gradient(180deg, rgba(9, 9, 11, 0.68) 0%, rgba(9, 9, 11, 0.86) 70%, #09090b 100%),
+        url('https://images.unsplash.com/photo-1519631108627-f0dd0d2a45d0?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-content { max-width: 840px; margin: 0 auto; }
+    .eyebrow-pill {
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-muted);
+      background: rgba(20, 20, 24, 0.72);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5.4vw, 4.3rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-secondary);
+      max-width: 660px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #09090b;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 30px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.22);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.34); }
+    .btn-dark {
+      background: rgba(21, 21, 26, 0.85);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-dark:hover { border-color: var(--gold); background: rgba(28, 28, 35, 0.95); }
+
+    /* Highlight Metrics Strip */
+    .trust-strip {
+      max-width: 1240px;
+      margin: -34px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--bg-card);
+      border: 1px solid var(--gold-muted);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    .trust-item {
+      padding: 20px 22px;
+      border-right: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item strong {
+      display: block;
+      font-family: var(--serif);
+      color: var(--gold-light);
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .trust-item span { font-size: 0.82rem; color: var(--text-secondary); }
+
+    /* Main Container & Section Headings */
+    .section-wrap { max-width: 1240px; margin: 0 auto; padding: 76px 24px 24px; }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 42px; }
+    .section-kicker {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .section-title em { font-style: italic; color: var(--gold-light); }
+    .section-desc { color: var(--text-secondary); font-size: 0.98rem; }
+
+    /* Interactive Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 42px;
+    }
+    .filter-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--gold-muted); color: var(--text-primary); }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #09090b;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    /* Therapy Category Sections & Cards */
+    .category-block { margin-bottom: 58px; }
+    .category-block.hidden { display: none; }
+    .category-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--gold-muted);
+      padding-bottom: 12px;
+      margin-bottom: 26px;
+    }
+    .category-heading h3 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      color: var(--gold-light);
+    }
+    .category-heading span { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+    }
+    .therapy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .therapy-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-muted);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.48);
+    }
+    .therapy-card.hidden-card { display: none; }
+    .card-media {
+      position: relative;
+      height: 205px;
+      background: linear-gradient(135deg, #1b1b22, #101014);
+      overflow: hidden;
+    }
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: brightness(0.86);
+    }
+    .therapy-card:hover .card-media img { transform: scale(1.05); filter: brightness(0.95); }
+    .card-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(9, 9, 11, 0.82);
+      border: 1px solid var(--gold-muted);
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .card-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h4 {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .card-body p { font-size: 0.91rem; color: var(--text-secondary); margin-bottom: 14px; }
+    .card-bullets { list-style: none; margin-bottom: 18px; flex: 1; }
+    .card-bullets li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .card-bullets li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.72rem;
+      top: 1px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .add-consult-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gold-muted);
+      background: var(--gold-soft);
+      transition: background 0.2s, color 0.2s;
+    }
+    .add-consult-btn:hover, .add-consult-btn.added {
+      background: var(--gold);
+      color: #09090b;
+    }
+    .direct-wa-link { font-size: 0.8rem; color: var(--text-muted); transition: color 0.2s; }
+    .direct-wa-link:hover { color: var(--whatsapp); }
+
+    /* Pathologies Index */
+    .pathologies-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--gold-muted);
+      border-radius: 18px;
+      padding: 46px 34px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .pathologies-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .path-chip {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .path-chip:hover { border-color: var(--gold); color: var(--gold-light); background: var(--gold-soft); }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 34px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 40px;
+    }
+    .about-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--gold-muted);
+      height: 100%;
+      min-height: 320px;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-copy h2 { font-family: var(--serif); font-size: 2rem; margin-bottom: 14px; }
+    .about-copy h2 em { color: var(--gold-light); font-style: italic; }
+    .about-copy p { color: var(--text-secondary); margin-bottom: 16px; font-size: 0.96rem; }
+    .pillars-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 26px; }
+    .pillar-pill {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.84rem;
+      color: var(--text-primary);
+    }
+    .pillar-pill strong { display: block; color: var(--gold-light); margin-bottom: 2px; font-size: 0.86rem; }
+
+    /* Contact / Maps Footer Band */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-muted);
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .contact-card h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--gold-light); margin-bottom: 10px; }
+    .contact-card p { color: var(--text-secondary); font-size: 0.93rem; margin-bottom: 18px; }
+    .wa-solid-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: #062111;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      transition: transform 0.2s;
+    }
+    .wa-solid-btn:hover { transform: translateY(-2px); }
+
+    footer {
+      margin-top: 72px;
+      border-top: 1px solid var(--gold-muted);
+      background: #060608;
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; margin-bottom: 14px; color: var(--text-secondary); }
+    .footer-links a:hover { color: var(--gold-light); }
+
+    /* Slide-out Navigation & Consultation Drawers */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 2000;
+      display: none;
+    }
+    .drawer-backdrop.open { display: block; }
+    .drawer {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: min(370px, 90vw);
+      background: #101014;
+      border-color: var(--gold-muted);
+      z-index: 2100;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease;
+    }
+    .drawer-left { left: 0; border-right: 1px solid var(--gold-muted); transform: translateX(-100%); }
+    .drawer-left.open { transform: translateX(0); }
+    .drawer-right { right: 0; border-left: 1px solid var(--gold-muted); transform: translateX(100%); }
+    .drawer-right.open { transform: translateX(0); }
+    .drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 20px;
+    }
+    .drawer-head h3 { font-family: var(--serif); color: var(--gold-light); font-size: 1.3rem; }
+    .drawer-close { font-size: 1.5rem; color: var(--text-secondary); padding: 4px 8px; }
+    .drawer-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 12px;
+      border-radius: 10px;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .drawer-nav a:hover { background: var(--gold-soft); color: var(--gold-light); }
+    .consult-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+    .consult-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+    .remove-item-btn { color: #ef6b6b; font-size: 0.85rem; }
+
+    .no-results-msg {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-secondary);
+      border: 1px dashed var(--gold-muted);
+      border-radius: 14px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .site-header { padding: 12px 18px; }
+      .brand-title { font-size: 1.05rem; }
+      .brand-sub { display: none; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item { border-bottom: 1px solid var(--border-subtle); }
+      .about-grid { grid-template-columns: 1fr; padding: 24px; }
+      .pillars-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .menu-label { display: none; }
+      .brand-logo-img { height: 36px; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 70vh; padding: 72px 18px; }
+    }
+  </style>
 </head>
 <body>
-<div class="top-bar">
-<span>Spa de la Salud y Medicina Integral · Atención Personalizada</span>
-<a href="https://wa.me/573209010721" class="whatsapp-btn" target="_blank">Escríbenos por WhatsApp</a>
-</div>
-<nav>
-<a href="#" class="logo">
-<img src="https://i.postimg.cc/GpQPZ6B2/Captura-de-pantalla-2026-11-26-a-la(s)-12-32-42-a-m.png" alt="Logo Opción de Vida">
-Opción de Vida
-</a>
-<div class="nav-links">
-<a href="#" class="active">Inicio</a>
-<a href="#services">Servicios</a>
-<a href="#about">Nosotros</a>
-<a href="#contact">Contacto</a>
-</div>
-</nav>
-<header class="hero">
-<h1>Tu Bienestar es Nuestra Prioridad</h1>
-<p>Spa de la Salud y Medicina Integral</p>
-<a href="#services" class="btn">Explora Nuestros Servicios</a>
-</header>
-<div class="container" id="services">
-<h2 class="section-title">Especialidades Médicas y Terapia</h2>
-<div class="services-grid">
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80" alt="Rehabilitación Física">
-<div class="service-content">
-<h3>Rehabilitación Física</h3>
-<p>Terapias avanzadas de recuperación funcional, manejo de dolor y rehabilitación neurológica y traumatológica.</p>
-</div>
-</div>
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80" alt="Medicina General">
-<div class="service-content">
-<h3>Medicina General</h3>
-<p>Consulta médica integral, prevención de enfermedades, control de crónicos y atención familiar prioritaria.</p>
-</div>
-</div>
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80" alt="Terapias de Bienestar">
-<div class="service-content">
-<h3>Terapias Alternativas y Estética</h3>
-<p>Tratamientos para el equilibrio mente-cuerpo, masoterapia, estética facial y corporal con los más altos estándares.</p>
-</div>
-</div>
-</div>
-</div>
-<section class="about-section" id="about">
-<h2 class="section-title">Sobre Nosotros</h2>
-<p class="about-intro">
-En <strong>Opción de Vida - Spa de la Salud</strong> integramos fisioterapia especializada, medicina general y terapias de bienestar en un solo lugar. Nuestro enfoque combina atención humana, diagnóstico personalizado y tratamientos basados en tu recuperación real.
-</p>
-<div class="about-grid">
-<div class="about-card">
-<h3>Área de Fisioterapia y Rehabilitación</h3>
-<ul>
-<li>Valoración fisioterapéutica integral para identificar la causa del dolor o la limitación física.</li>
-<li>Planes personalizados de recuperación funcional, movilidad articular y fortalecimiento muscular.</li>
-<li>Manejo de lesiones deportivas, rehabilitación traumatológica y acompañamiento neurológico.</li>
-</ul>
-</div>
-<div class="about-card">
-<h3>Medicina Integral y Seguimiento</h3>
-<ul>
-<li>Consulta de medicina general orientada a la prevención y al diagnóstico oportuno.</li>
-<li>Control continuo de enfermedades crónicas con atención cercana y prioritaria para toda la familia.</li>
-<li>Trabajo coordinado entre médico y fisioterapeuta para acelerar tu bienestar.</li>
-</ul>
-</div>
-<div class="about-card">
-<h3>Bienestar, Masoterapia y Estética</h3>
-<ul>
-<li>Terapias alternativas enfocadas en el equilibrio mente-cuerpo y la reducción del estrés.</li>
-<li>Masoterapia terapéutica y relajante adaptada a tus necesidades musculares.</li>
-<li>Cuidado estético facial y corporal con estándares seguros de salud y spa.</li>
-</ul>
-</div>
-</div>
-<div class="about-cta">
-<a href="https://wa.me/573209010721" class="btn" target="_blank">Agenda tu Valoración por WhatsApp</a>
-</div>
-</section>
-<footer id="contact">
-<div class="footer-links">
-<a href="#">Inicio</a> | <a href="#services">Servicios</a> | <a href="#about">Nosotros</a> | <a href="#contact">Contacto</a>
-</div>
-<p style="margin-bottom: 8px;">Agenda tu cita por <a href="https://wa.me/573209010721" target="_blank" style="color: #80cbc4; text-decoration: none; font-weight: bold;">WhatsApp (+57 320 901 0721)</a></p>
-<p>©️ 2026 Opción de Vida - Spa de la Salud. Todos los derechos reservados.</p>
-</footer>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <button class="menu-trigger" id="openSectionsBtn" aria-label="Abrir secciones">
+        <span class="hamburger-lines" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="menu-label">Secciones</span>
+      </button>
+    </div>
+
+    <a href="#" class="brand-center">
+      <img class="brand-logo-img" src="https://i.postimg.cc/GpQPZ6B2/Captura-de-pantalla-2026-11-26-a-la(s)-12-32-42-a-m.png" alt="Logo Opción de Vida">
+      <div class="brand-wordmark">
+        <span class="brand-title">Opción de Vida</span>
+        <span class="brand-sub">Spa de la Salud · Medicina Integral</span>
+      </div>
+    </a>
+
+    <div class="header-right">
+      <button class="icon-circle-btn" id="toggleSearchBtn" title="Buscar terapia o patología" aria-label="Buscar terapia">
+        🔍
+      </button>
+      <button class="icon-circle-btn gold-circle" id="openConsultBtn" title="Ver lista de consulta por WhatsApp" aria-label="Mi consulta">
+        📋
+        <span class="badge-count" id="consultCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Toggleable Search Bar -->
+  <div class="search-bar-panel" id="searchPanel">
+    <div class="search-bar-inner">
+      <span>🔍</span>
+      <input type="text" id="therapySearchInput" placeholder="Busca terapia, patología o servicio (ej. neural, ciática, ACV, ácido hialurónico, quiropráctico)...">
+      <button id="clearSearchBtn" style="color: var(--gold-light); font-size: 0.82rem;">Limpiar</button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="eyebrow-pill">Experiencia en Salud Integral y Bienestar</span>
+      <h1>El arte de la salud integral <em>sin límites</em></h1>
+      <p>
+        Explora nuestro extenso catálogo de tratamientos especializados en medicina biológica y magistral, fisioterapia de alta precisión, quiropraxia lumbosacra, hidroterapia y medicina estética en un solo lugar.
+      </p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn-gold">Explorar Catálogo de Terapias</a>
+        <a href="https://wa.me/573209010721" target="_blank" rel="noopener" class="btn-dark">Agendar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Pillars Strip -->
+  <div class="trust-strip">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <strong>Línea Magistral</strong>
+        <span>Fórmulas magistrales, homeópatas y homológicos</span>
+      </div>
+      <div class="trust-item">
+        <strong>Fisioterapia &amp; ACV</strong>
+        <span>Columna, ciática, rodillas y neuro-rehabilitación</span>
+      </div>
+      <div class="trust-item">
+        <strong>Quiropraxia Nacional</strong>
+        <span>Acomodamiento lumbosacro y corporal completo</span>
+      </div>
+      <div class="trust-item">
+        <strong>Spa &amp; Estética Médica</strong>
+        <span>Oxigenación, hidroterapia, hialurónico y toxina</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catalogo de Servicios & Terapias -->
+  <main class="section-wrap" id="catalogo">
+    <div class="section-header">
+      <span class="section-kicker">Catálogo Terapéutico Especializado</span>
+      <h2 class="section-title">Nuestras Especialidades <em>y Procesos</em></h2>
+      <p class="section-desc">
+        Selecciona una categoría o busca el tratamiento que necesitas. Puedes agregar varias terapias a tu lista para cotizar o agendar directamente por WhatsApp.
+      </p>
+    </div>
+
+    <div class="filter-tabs" role="tablist" aria-label="Filtrar categorías de terapias">
+      <button class="filter-btn active" data-filter="all">Todas las Secciones</button>
+      <button class="filter-btn" data-filter="neurales">Neurales y Sistémicas</button>
+      <button class="filter-btn" data-filter="fisioterapia">Fisioterapia y Quiropraxia</button>
+      <button class="filter-btn" data-filter="magistral">Magistral y Patologías</button>
+      <button class="filter-btn" data-filter="equipos">Equipos e Hidroterapia</button>
+      <button class="filter-btn" data-filter="estetica">Estética y Belleza</button>
+    </div>
+
+    <div class="no-results-msg" id="noResultsMsg">
+      No encontramos terapias que coincidan con tu búsqueda. Prueba con términos como <strong>neural</strong>, <strong>ciática</strong>, <strong>ACV</strong>, <strong>quiropráctico</strong> o <strong>hialurónico</strong>.
+    </div>
+
+    <!-- 1. Terapias Neurales, Cerebrales y Sistémicas -->
+    <section class="category-block" data-category="neurales" id="neurales">
+      <div class="category-heading">
+        <h3>1. Terapias Neurales, Cerebrales y Sistémicas</h3>
+        <span>Regulación y Bienestar Orgánico</span>
+      </div>
+      <div class="cards-grid">
+        <article class="therapy-card" data-keywords="terapia neural cerebral craneal dolor sistema nervioso migrana">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1512290900672-87850a498f10?auto=format&fit=crop&w=900&q=80" alt="Terapia Neural, Cerebral y Craneal">
+            <span class="card-tag">Neuro-Regulación</span>
+          </div>
+          <div class="card-body">
+            <h4>Terapia Neural, Cerebral y Craneal</h4>
+            <p>Intervención reguladora sobre el sistema nervioso para desbloquear campos interferentes y favorecer la recuperación neurológica.</p>
+            <ul class="card-bullets">
+              <li>Terapia neural focalizada en alivio del dolor y equilibrio autonómico.</li>
+              <li>Terapia cerebral y craneal para cefaleas, estrés y soporte neurofuncional.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Terapia Neural, Cerebral y Craneal">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Terapia%20Neural,%20Cerebral%20y%20Craneal" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="colonterapia no invasiva terapia gastrointestinal digestiva colon">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Colonterapia No Invasiva y Terapia Gastrointestinal">
+            <span class="card-tag">Salud Digestiva</span>
+          </div>
+          <div class="card-body">
+            <h4>Colonterapia No Invasiva y Gastrointestinal</h4>
+            <p>Limpieza y restauración digestiva suave y segura, sin procedimientos invasivos, orientada al equilibrio intestinal integral.</p>
+            <ul class="card-bullets">
+              <li>Colonterapia no invasiva para desintoxicación y confort abdominal.</li>
+              <li>Terapia gastrointestinal para inflamación, tránsito lento y microbiota.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Colonterapia No Invasiva y Terapia Gastrointestinal">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Colonterapia%20No%20Invasiva" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="terapias funcionales cardiovasculares circulacion metabolismo">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Terapias Funcionales y Cardiovasculares">
+            <span class="card-tag">Soporte Sistémico</span>
+          </div>
+          <div class="card-body">
+            <h4>Terapias Funcionales y Cardiovasculares</h4>
+            <p>Protocolos dirigidos a restaurar la vitalidad orgánica, mejorar el desempeño físico diario y proteger tu sistema circulatorio.</p>
+            <ul class="card-bullets">
+              <li>Terapias funcionales adaptadas al metabolismo y la energía celular.</li>
+              <li>Terapias cardiovasculares para circulación y prevención integral.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Terapias Funcionales y Cardiovasculares">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Terapias%20Funcionales%20y%20Cardiovasculares" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. Fisioterapia, Fisiatría y Quiropraxia -->
+    <section class="category-block" data-category="fisioterapia" id="fisioterapia">
+      <div class="category-heading">
+        <h3>2. Fisioterapia, Fisiatría y Quiropraxia</h3>
+        <span>Columna, Articulaciones y Movilidad</span>
+      </div>
+      <div class="cards-grid">
+        <article class="therapy-card" data-keywords="acomodamiento lumbosacro cuerpo quiropractico columna ajuste">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80" alt="Acomodamiento Lumbosacro y Quiropraxia">
+            <span class="card-tag">Especialidad Destacada</span>
+          </div>
+          <div class="card-body">
+            <h4>Acomodamiento Lumbosacro y Corporal</h4>
+            <p>Alineación biomecánica integral realizada con uno de los mejores quiroprácticos del país para liberar tensiones y restaurar postura.</p>
+            <ul class="card-bullets">
+              <li>Acomodamiento lumbosacro preciso para pelvis y zona lumbar.</li>
+              <li>Ajuste quiropráctico de todo el cuerpo con evaluación postural.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Acomodamiento Lumbosacro y Quiropraxia Corporal">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20agendar%20Acomodamiento%20Lumbosacro%20y%20Quiropraxia" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="cervical lumbar vertebral ciatica columna espalda dolor">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Terapias Cervicales, Lumbares y Ciática">
+            <span class="card-tag">Columna &amp; Nervio Ciático</span>
+          </div>
+          <div class="card-body">
+            <h4>Columna Cervical, Lumbar y Ciática</h4>
+            <p>Tratamientos clínicos orientados a descomprimir la columna vertebral, reducir inflamación radicular y eliminar el dolor irradiado.</p>
+            <ul class="card-bullets">
+              <li>Terapias a nivel cervical, lumbar y vertebral de alta precisión.</li>
+              <li>Protocolos específicos para el alivio de la ciática y lumbalgias.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Terapias Cervical, Lumbar, Vertebral y Ciática">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20necesito%20terapia%20para%20Columna%20y%20Ci%C3%A1tica" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="rodillas piernas fisiatricas fisioterapeuticas rehabilitacion fisica">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Terapias Fisiátricas y de Rodillas">
+            <span class="card-tag">Fisiatría &amp; Piernas</span>
+          </div>
+          <div class="card-body">
+            <h4>Terapias Fisiátricas y para Rodillas</h4>
+            <p>Rehabilitación física y fisiátrica enfocada en rodillas, piernas y recuperación funcional de lesiones articulares o musculares.</p>
+            <ul class="card-bullets">
+              <li>Terapias especializadas para rodillas, desgaste articular y marcha.</li>
+              <li>Manejo fisiátrico y fisioterapéutico personalizado por sesión.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Terapias Fisiátricas, Fisioterapia y Rodillas">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Fisiatr%C3%ADa%20y%20Terapia%20de%20Rodillas" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Medicina Magistral, Homeopática y Patologías -->
+    <section class="category-block" data-category="magistral" id="magistral">
+      <div class="category-heading">
+        <h3>3. Medicina Magistral, Homeopatía y Patologías</h3>
+        <span>Manejo Clínico Biológico y Complejo</span>
+      </div>
+      <div class="cards-grid">
+        <article class="therapy-card" data-keywords="medicamentos magistral homeopatas homologicos formulas naturales">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Medicamentos Magistrales, Homeópatas y Homológicos">
+            <span class="card-tag">Medicina Biológica</span>
+          </div>
+          <div class="card-body">
+            <h4>Línea Magistral, Homeópatas y Homológicos</h4>
+            <p>Formulación y manejo terapéutico con medicamentos biológicos de alta calidad diseñados para la respuesta individual de cada paciente.</p>
+            <ul class="card-bullets">
+              <li>Medicamentos de línea magistral dosificados según valoración médica.</li>
+              <li>Esquemas homeopáticos y homológicos complementarios y seguros.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Medicamentos Magistrales, Homeópatas y Homológicos">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Medicina%20Magistral%20y%20Homeop%C3%A1tica" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="hipertension diabetes tiroides enfermedades graves leves patologias">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Manejo de Patologías Crónicas">
+            <span class="card-tag">Control Integral</span>
+          </div>
+          <div class="card-body">
+            <h4>Patologías Graves, Leves y Crónicas</h4>
+            <p>Acompañamiento médico y terapéutico para estabilizar condiciones metabólicas y crónicas que afectan la calidad de vida.</p>
+            <ul class="card-bullets">
+              <li>Control y apoyo terapéutico en hipertensión, diabetes y tiroides.</li>
+              <li>Abordaje integrativo para diversas patologías humanas leves o graves.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Manejo de Patologías (Hipertensión, Diabetes, Tiroides)">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20consulta%20para%20manejo%20de%20patolog%C3%ADas" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="acv accidente cerebrovascular derrame rehabilitacion neurologica">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Expertos en ACV y Neuro-Rehabilitación">
+            <span class="card-tag">Alta Especialidad</span>
+          </div>
+          <div class="card-body">
+            <h4>Expertos en ACV y Secuelas Neurológicas</h4>
+            <p>Equipo interdisciplinario con amplia experiencia en la recuperación integral de pacientes que han presentado Accidente Cerebrovascular.</p>
+            <ul class="card-bullets">
+              <li>Terapia cerebral, funcional y fisioterapia neuro-motora intensiva.</li>
+              <li>Seguimiento cercano para recuperar autonomía y calidad de vida.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Rehabilitación Especializada en ACV">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20busco%20atenci%C3%B3n%20especializada%20en%20ACV" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Equipos Clínicos e Hidroterapia -->
+    <section class="category-block" data-category="equipos" id="equipos">
+      <div class="category-heading">
+        <h3>4. Equipos Clínicos, Oxigenación e Hidroterapia</h3>
+        <span>Tecnología Terapéutica y Agua</span>
+      </div>
+      <div class="cards-grid">
+        <article class="therapy-card" data-keywords="camara de oxigenacion revascularizacion oxigeno celular">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1519631108627-f0dd0d2a45d0?auto=format&fit=crop&w=900&q=80" alt="Cámara de Oxigenación y Revascularización">
+            <span class="card-tag">Regeneración Celular</span>
+          </div>
+          <div class="card-body">
+            <h4>Cámara de Oxigenación y Revascularización</h4>
+            <p>Terapias enfocadas en potenciar la oxigenación tisular, estimular la microcirculación y acelerar los procesos de reparación celular.</p>
+            <ul class="card-bullets">
+              <li>Sesiones en cámara de oxigenación para recuperación y vitalidad.</li>
+              <li>Protocolos de revascularización para mejorar riego sanguíneo y tejidos.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Cámara de Oxigenación y Revascularización">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20C%C3%A1mara%20de%20Oxigenaci%C3%B3n%20y%20Revascularizaci%C3%B3n" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="hidroterapias terapias en agua termoterapia calor dolor">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Hidroterapias, Terapias en Agua y Termoterapia">
+            <span class="card-tag">Agua &amp; Calor Terapéutico</span>
+          </div>
+          <div class="card-body">
+            <h4>Hidroterapias, Terapias en Agua y Termoterapia</h4>
+            <p>Modalidades físicas en medio acuático y térmico para aliviar el dolor, disminuir rigidez y facilitar el movimiento sin impacto.</p>
+            <ul class="card-bullets">
+              <li>Hidroterapias y terapias en agua dirigidas por profesionales.</li>
+              <li>Termoterapia terapéutica para contracturas, articulaciones y espasmos.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Hidroterapias, Terapias en Agua y Termoterapia">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Hidroterapias%20y%20Termoterapia" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Medicina Estética y Belleza -->
+    <section class="category-block" data-category="estetica" id="estetica">
+      <div class="category-heading">
+        <h3>5. Medicina Estética y Belleza Integral</h3>
+        <span>Armonización Facial y Cuidado Personal</span>
+      </div>
+      <div class="cards-grid">
+        <article class="therapy-card" data-keywords="belleza acido hialuronico aumento de labios armonizacion facial">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" alt="Ácido Hialurónico y Aumento de Labios">
+            <span class="card-tag">Armonización</span>
+          </div>
+          <div class="card-body">
+            <h4>Ácido Hialurónico y Aumento de Labios</h4>
+            <p>Procedimientos estéticos sutiles y seguros para hidratar la piel, devolver volumen y realzar la armonía natural del rostro.</p>
+            <ul class="card-bullets">
+              <li>Aplicación clínica de ácido hialurónico con resultados naturales.</li>
+              <li>Aumento, hidratación y perfilamiento de labios personalizado.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Ácido Hialurónico y Aumento de Labios">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20%C3%81cido%20Hialur%C3%B3nico%20y%20Aumento%20de%20Labios" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="therapy-card" data-keywords="toxina botulinica botox estetica facial corporal belleza">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1512290900672-87850a498f10?auto=format&fit=crop&w=900&q=80" alt="Toxina Botulínica y Estética Facial">
+            <span class="card-tag">Rejuvenecimiento</span>
+          </div>
+          <div class="card-body">
+            <h4>Toxina Botulínica y Estética Integral</h4>
+            <p>Tratamientos de estética facial y corporal que suavizan líneas de expresión manteniendo la naturalidad y frescura de tu rostro.</p>
+            <ul class="card-bullets">
+              <li>Aplicación segura de toxina botulínica para expresión armónica.</li>
+              <li>Protocolos complementarios de belleza y cuidado de la piel.</li>
+            </ul>
+            <div class="card-footer">
+              <button class="add-consult-btn" data-service="Toxina Botulínica y Estética Facial">+ Agregar a Consulta</button>
+              <a class="direct-wa-link" href="https://wa.me/573209010721?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Toxina%20Botul%C3%ADnica%20y%20Est%C3%A9tica" target="_blank" rel="noopener">Consultar →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Patologías Index -->
+    <section class="pathologies-box" id="patologias">
+      <span class="section-kicker">Atención Especializada por Condición</span>
+      <h2 class="section-title">Patologías que <em>Acompañamos</em></h2>
+      <p class="section-desc">Haz clic en cualquier condición para filtrar en el catálogo las terapias relacionadas.</p>
+      <div class="pathologies-chips">
+        <button class="path-chip" data-search="ACV">ACV (Accidente Cerebrovascular)</button>
+        <button class="path-chip" data-search="ciática">Ciática</button>
+        <button class="path-chip" data-search="cervical">Columna Cervical y Lumbar</button>
+        <button class="path-chip" data-search="rodillas">Rodillas y Piernas</button>
+        <button class="path-chip" data-search="hipertensión">Hipertensión</button>
+        <button class="path-chip" data-search="diabetes">Diabetes</button>
+        <button class="path-chip" data-search="tiroides">Tiroides</button>
+        <button class="path-chip" data-search="gastrointestinal">Salud Gastrointestinal</button>
+        <button class="path-chip" data-search="cardiovasculares">Salud Cardiovascular</button>
+        <button class="path-chip" data-search="lumbosacro">Acomodamiento Lumbosacro</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sobre Nosotros -->
+  <section class="section-wrap" id="about">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=80" alt="Equipo Terapéutico Opción de Vida">
+      </div>
+      <div class="about-copy">
+        <span class="section-kicker">Sobre Nosotros</span>
+        <h2>Ciencia, cuidado humano y <em>recuperación real</em></h2>
+        <p>
+          En <strong>Opción de Vida - Spa de la Salud</strong> unimos el rigor clínico de la fisiatría, la fisioterapia, la medicina magistral y la quiropraxia especializada con la serenidad de un centro de bienestar integral.
+        </p>
+        <p>
+          Atendemos desde procesos terapéuticos cotidianos hasta patologías complejas como secuelas de ACV, alteraciones metabólicas y afecciones vertebrales, integrando además medicina estética segura.
+        </p>
+        <div class="pillars-list">
+          <div class="pillar-pill">
+            <strong>Valoración Integral</strong>
+            Diagnóstico personalizado causa-raíz.
+          </div>
+          <div class="pillar-pill">
+            <strong>Quiropraxia Experta</strong>
+            Ajuste lumbosacro y corporal de alto nivel.
+          </div>
+          <div class="pillar-pill">
+            <strong>Medicina Magistral</strong>
+            Fórmulas homeopáticas y homológicas.
+          </div>
+          <div class="pillar-pill">
+            <strong>Equipos &amp; Spa</strong>
+            Oxigenación, hidroterapia y estética.
+          </div>
+        </div>
+        <a href="https://wa.me/573209010721" target="_blank" rel="noopener" class="btn-gold">Agenda tu Valoración Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto & Mapa -->
+  <section class="section-wrap" id="contact">
+    <div class="section-header">
+      <span class="section-kicker">Atención Directa</span>
+      <h2 class="section-title">Agenda tu Cita o <em>Visítanos</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Atención Inmediata por WhatsApp</h3>
+        <p>Escríbenos directamente para agendar valoración fisioterapéutica, consulta médica integral, ajuste quiropráctico o tratamientos estéticos.</p>
+        <a href="https://wa.me/573209010721" target="_blank" rel="noopener" class="wa-solid-btn">
+          💬 WhatsApp +57 320 901 0721
+        </a>
+      </div>
+      <div class="contact-card">
+        <h3>Ubicación en Google Maps</h3>
+        <p>Opción de Vida · Spa de la Salud (Bogotá D.C., Colombia). Solicita la ubicación exacta por WhatsApp mientras conectamos nuestro mapa interactivo.</p>
+        <a href="https://wa.me/573209010721?text=Hola,%20me%20comparten%20por%20favor%20la%20ubicaci%C3%B3n%20en%20Google%20Maps%20de%20Opci%C3%B3n%20de%20Vida" target="_blank" rel="noopener" class="btn-dark">
+          📍 Pedir Ubicación Exacta
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo de Terapias</a>
+      <a href="#patologias">Patologías</a>
+      <a href="#about">Nosotros</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <p>© 2026 Opción de Vida - Spa de la Salud &amp; Medicina Integral. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Slide-out Left Navigation Drawer (SECCIONES) -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer drawer-left" id="sectionsDrawer" aria-label="Menú de secciones">
+    <div class="drawer-head">
+      <h3>Secciones</h3>
+      <button class="drawer-close" id="closeSectionsBtn" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#inicio" class="drawer-link">Inicio <span>→</span></a>
+      <a href="#neurales" class="drawer-link">Terapias Neurales y Sistémicas <span>→</span></a>
+      <a href="#fisioterapia" class="drawer-link">Fisioterapia y Quiropraxia <span>→</span></a>
+      <a href="#magistral" class="drawer-link">Medicina Magistral y Patologías <span>→</span></a>
+      <a href="#equipos" class="drawer-link">Oxigenación e Hidroterapia <span>→</span></a>
+      <a href="#estetica" class="drawer-link">Estética y Belleza <span>→</span></a>
+      <a href="#patologias" class="drawer-link">Patologías que Tratamos <span>→</span></a>
+      <a href="#about" class="drawer-link">Sobre Nosotros <span>→</span></a>
+      <a href="#contact" class="drawer-link">Contacto y WhatsApp <span>→</span></a>
+    </nav>
+  </aside>
+
+  <!-- Slide-out Right Consultation List Drawer -->
+  <aside class="drawer drawer-right" id="consultDrawer" aria-label="Lista de consulta">
+    <div class="drawer-head">
+      <h3>Mi Consulta</h3>
+      <button class="drawer-close" id="closeConsultBtn" aria-label="Cerrar lista">&times;</button>
+    </div>
+    <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 16px;">
+      Agrega las terapias de tu interés y envíalas en un solo mensaje por WhatsApp.
+    </p>
+    <div class="consult-list" id="consultList">
+      <p style="color: var(--text-muted); font-size: 0.88rem;">Aún no has agregado terapias a tu consulta.</p>
+    </div>
+    <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle); margin-top: 16px;">
+      <a href="https://wa.me/573209010721" id="sendConsultWaBtn" target="_blank" rel="noopener" class="btn-gold" style="width: 100%; justify-content: center;">
+        Enviar Consulta por WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <script>
+    const backdrop = document.getElementById('drawerBackdrop');
+    const sectionsDrawer = document.getElementById('sectionsDrawer');
+    const consultDrawer = document.getElementById('consultDrawer');
+    const searchPanel = document.getElementById('searchPanel');
+    const searchInput = document.getElementById('therapySearchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const categoryBlocks = document.querySelectorAll('.category-block');
+    const therapyCards = document.querySelectorAll('.therapy-card');
+    const noResultsMsg = document.getElementById('noResultsMsg');
+
+    function closeAllDrawers() {
+      backdrop.classList.remove('open');
+      sectionsDrawer.classList.remove('open');
+      consultDrawer.classList.remove('open');
+    }
+
+    document.getElementById('openSectionsBtn').addEventListener('click', () => {
+      closeAllDrawers();
+      backdrop.classList.add('open');
+      sectionsDrawer.classList.add('open');
+    });
+    document.getElementById('openConsultBtn').addEventListener('click', () => {
+      closeAllDrawers();
+      backdrop.classList.add('open');
+      consultDrawer.classList.add('open');
+    });
+    document.getElementById('closeSectionsBtn').addEventListener('click', closeAllDrawers);
+    document.getElementById('closeConsultBtn').addEventListener('click', closeAllDrawers);
+    backdrop.addEventListener('click', closeAllDrawers);
+    document.querySelectorAll('.drawer-link').forEach(link => {
+      link.addEventListener('click', closeAllDrawers);
+    });
+
+    document.getElementById('toggleSearchBtn').addEventListener('click', () => {
+      searchPanel.classList.toggle('open');
+      if (searchPanel.classList.contains('open')) searchInput.focus();
+    });
+
+    let activeCategory = 'all';
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      categoryBlocks.forEach(block => {
+        const cat = block.dataset.category;
+        const catMatch = activeCategory === 'all' || activeCategory === cat;
+        let blockHasVisibleCard = false;
+
+        block.querySelectorAll('.therapy-card').forEach(card => {
+          const text = (card.innerText + ' ' + (card.dataset.keywords || '')).toLowerCase();
+          const queryMatch = !query || text.includes(query);
+          if (catMatch && queryMatch) {
+            card.classList.remove('hidden-card');
+            blockHasVisibleCard = true;
+            visibleCount++;
+          } else {
+            card.classList.add('hidden-card');
+          }
+        });
+
+        block.classList.toggle('hidden', !blockHasVisibleCard);
+      });
+
+      noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    document.getElementById('clearSearchBtn').addEventListener('click', () => {
+      searchInput.value = '';
+      applyFilters();
+    });
+
+    document.querySelectorAll('.path-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns[0].classList.add('active');
+        activeCategory = 'all';
+        searchPanel.classList.add('open');
+        searchInput.value = chip.dataset.search;
+        applyFilters();
+        document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Consultation list for WhatsApp
+    const selectedServices = new Set();
+    const consultCount = document.getElementById('consultCount');
+    const consultList = document.getElementById('consultList');
+    const sendConsultWaBtn = document.getElementById('sendConsultWaBtn');
+
+    function renderConsultList() {
+      consultCount.textContent = selectedServices.size;
+      if (selectedServices.size === 0) {
+        consultList.innerHTML = '<p style="color: var(--text-muted); font-size: 0.88rem;">Aún no has agregado terapias a tu consulta.</p>';
+        sendConsultWaBtn.href = 'https://wa.me/573209010721';
+        return;
+      }
+
+      consultList.innerHTML = '';
+      selectedServices.forEach(service => {
+        const row = document.createElement('div');
+        row.className = 'consult-item';
+        const label = document.createElement('span');
+        label.textContent = service;
+        const rm = document.createElement('button');
+        rm.className = 'remove-item-btn';
+        rm.textContent = 'Quitar';
+        rm.addEventListener('click', () => {
+          selectedServices.delete(service);
+          document.querySelectorAll(`.add-consult-btn[data-service="${CSS.escape(service)}"]`).forEach(b => {
+            b.classList.remove('added');
+            b.textContent = '+ Agregar a Consulta';
+          });
+          renderConsultList();
+        });
+        row.appendChild(label);
+        row.appendChild(rm);
+        consultList.appendChild(row);
+      });
+
+      const msg = 'Hola Opción de Vida, deseo agendar valoración o información sobre:\n- ' + Array.from(selectedServices).join('\n- ');
+      sendConsultWaBtn.href = 'https://wa.me/573209010721?text=' + encodeURIComponent(msg);
+    }
+
+    document.querySelectorAll('.add-consult-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const svc = btn.dataset.service;
+        if (selectedServices.has(svc)) {
+          selectedServices.delete(svc);
+          btn.classList.remove('added');
+          btn.textContent = '+ Agregar a Consulta';
+        } else {
+          selectedServices.add(svc);
+          btn.classList.add('added');
+          btn.textContent = '✓ Agregada';
+        }
+        renderConsultList();
+      });
+    });
+  </script>
 </body>
 </html>
